@@ -13,13 +13,13 @@ sudo mkdir -p /data/web_static/shared/
 sudo mkdir -p /data/web_static/releases/test/
 
 # Creates a fake HTML file /data/web_static/releases/test/index.html to test Nginx configuration
-echo '<html>
+sudo echo '<html>
   <head>
   </head>
   <body>
     Holberton School
   </body>
-</html>' > sudo tee /data/web_static/releases/test/index.html
+</html>' > /data/web_static/releases/test/index.html
 
 # Creates a symbolic link /data/web_static/current linked to the /data/web_static/releases/test/ folder. If the symbolic link already exists, it should be deleted and recreated every time the script is ran.
 sudo ln -s -f /data/web_static/releases/test/ /data/web_static/current
