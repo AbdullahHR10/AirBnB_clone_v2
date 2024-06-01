@@ -13,7 +13,7 @@ sudo mkdir -p /data/web_static/shared/
 sudo mkdir -p /data/web_static/releases/test/
 
 # Creates a fake HTML file /data/web_static/releases/test/index.html to test Nginx configuration
-sudo echo '<html>
+echo '<html>
   <head>
   </head>
   <body>
