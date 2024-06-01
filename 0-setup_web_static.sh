@@ -6,20 +6,11 @@ apt update
 nginx -v
 apt install nginx -y
 
-# Creates the folder /data/ if it doesn’t already exist
-mkdir -p /data/
-
-# Creates the folder /data/web_static/ if it doesn’t already exist
-mkdir -p /data/web_static/
-
-# Creates the folder /data/web_static/releases/ if it doesn’t already exist
-mkdir -p /data/web_static/releases/
-
 # Creates the folder /data/web_static/shared/ if it doesn’t already exist
 mkdir -p /data/web_static/shared/
 
 # Creates the folder /data/web_static/releases/test/ if it doesn’t already exist
-mkdir -p ~/data/web_static/releases/test/
+mkdir -p /data/web_static/releases/test/
 
 # Creates a fake HTML file /data/web_static/releases/test/index.html to test Nginx configuration
 echo '<html>
