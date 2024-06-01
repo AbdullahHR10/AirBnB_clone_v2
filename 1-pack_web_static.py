@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""Generates a .tgz archive from the contents of the web_static folder of your AirBnB Clone repo, using the function do_pack.
+"""Generates a .tgz archive from the contents of the web_static folder
+of your AirBnB Clone repo, using the function do_pack.
 """
 
 
@@ -16,5 +17,5 @@ def do_pack():
         archive_name = "web_static_{}.tgz".format(time_now)
         local("tar -czvf versions/{} web_static".format(archive_name))
         return "versions/{}".format(archive_name)
-    except:
+    except Exception as e:
         return None
