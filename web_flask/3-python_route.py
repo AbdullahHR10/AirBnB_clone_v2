@@ -27,7 +27,7 @@ def c_text(text):
 
 @app.route('/python/<text>', strict_slashes=False)
 def python_text(text="is cool"):
-    """Reotue that returns 'Python ' followed by the value of the text variable.
+    """Rotue that returns 'Python ' followed by the value of the text variable.
     Replaces underscores with spaces."""
     return 'Python ' + text.replace('_', ' ')
 
