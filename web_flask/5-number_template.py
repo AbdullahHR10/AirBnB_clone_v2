@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""A simple Flask web application with 5 routes"""
+"""A simple Flask web application with 6 routes"""
 
 from flask import Flask, render_template
 
