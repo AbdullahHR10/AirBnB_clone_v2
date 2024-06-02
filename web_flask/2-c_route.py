@@ -22,7 +22,7 @@ def hbnb():
 def c_text(text):
     """Route that returns 'C ' followed by the value of the text variable.
     Replaces underscores with spaces."""
-    return 'C ' + text.relace('_', ' ')
+    return 'C ' + text.replace('_', ' ')
 
 
 if __name__ == '__main__':
