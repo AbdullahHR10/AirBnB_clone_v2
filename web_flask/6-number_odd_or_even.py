@@ -49,8 +49,7 @@ def number_template(n):
 def number_odd_or_even(n):
     """Route that displays an HTML page only if n is an integer.
     The page displays whether the number is even or odd."""
-    even_or_odd = "even" if n % 2 == 0 else "odd"
-    return render_template('number_odd_or_even.html', number=n, even_or_odd=even_or_odd)
+    return render_template('number_odd_or_even.html', number=n)
 
 
 if __name__ == '__main__':
