@@ -1,33 +1,33 @@
 #!/usr/bin/python3
-"""Fabric script (based on the file 1-pack_web_static.py)
-that distributes an archive to your web servers, using the function do_deploy
-"""
+""" A Fabric script (based on the file 1-pack_web_static.py) that distributes
+an archive to your web servers, using the function do_deploy. """
 
 
-from fabric.api import env, put, run
-import os
+from fabric.api import *
+from datetime import datetime
+from os.path import exists
 
 
-env.hosts = ['3.89.160.4', '34.232.66.125']
+env.hosts = ['35.237.166.125', '54.167.61.201']
 
 
 def do_deploy(archive_path):
-    """Fabric script that distributes an archive to your web servers
-    using the function do_deploy."""
-    if not os.path.exists(archive_path):
+    """ Distributes an archive to my web servers. """
+    if exists(archive_path) is False:
         return False
+    filename = archive_path.split('/')[-1]
+    no_tgz = '/data/web_static/releases/' + "{}".format(filename.split('.')[0])
+    tmp = "/tmp/" + filename
+
     try:
         put(archive_path, "/tmp/")
-        archive_file = archive_path.split("/")[-1]
-        archive_name = archive_path.split(".")[0]
-        release_dir = f"/data/web_static/releases/{archive_name}/"
-        run(f"mkdir -p {release_dir}")
-        run(f"tar -xzf /tmp/{archive_file} -C {release_dir}")
-        run(f"rm /tmp/{archive_file}")
-        run(f"mv {release_dir}web_static/* {release_dir}")
-        run(f"rm -rf {release_dir}web_static")
+        run("mkdir -p {}/".format(no_tgz))
+        run("tar -xzf {} -C {}/".format(tmp, no_tgz))
+        run("rm {}".format(tmp))
+        run("mv {}/web_static/* {}/".format(no_tgz, no_tgz))
+        run("rm -rf {}/web_static".format(no_tgz))
         run("rm -rf /data/web_static/current")
-        run(f"ln -s {release_dir} /data/web_static/current")
+        run("ln -s {}/ /data/web_static/current".format(no_tgz))
         return True
-    except Exception as e:
+    except:
         return False
