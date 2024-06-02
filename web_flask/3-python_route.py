@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""A simple Flask web application with 4 routes"""
+"""A simple Flask web application with 5 routes"""
 
 from flask import Flask
 
@@ -23,6 +23,7 @@ def c_text(text):
     """Route that returns 'C ' followed by the value of the text variable.
     Replaces underscores with spaces."""
     return 'C ' + text.replace('_', ' ')
+
 
 @app.route('/python/')
 @app.route('/python/<text>', strict_slashes=False)
