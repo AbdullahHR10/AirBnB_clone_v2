@@ -11,12 +11,12 @@ mkdir -p /data/web_static/shared/
 
 # Creates a fake index.html file with simple content to test Nginx configuration
 echo "<html>
-<head>
-<title>Test Page</title>
-</head>
-<body>
-<h1>This is a test page for Nginx configuration</h1>
-</body>
+  <head>
+    <title>Test Page</title>
+  </head>
+  <body>
+    <h1>This is a test page for Nginx configuration</h1>
+  </body>
 </html>" > /data/web_static/releases/test/index.html
 
 # Creates a symbolic link, if it already exists it will be deleted and recreated
