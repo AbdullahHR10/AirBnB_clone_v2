@@ -7,10 +7,12 @@ app = Flask(__name__)
 
 @app.route('/', strict_slashes=False)
 def Hello_HBNB():
+    """Displays 'Hello HBNB!' for the root url"""
     return "Hello HBNB!"
 
 @app.route('/hbnb', strict_slashes=False)
 def HBNB():
+    """Displays 'HBNB' for the 'hbnb' url"""
     return "HBNB"
 
 
