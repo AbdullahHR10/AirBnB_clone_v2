@@ -62,5 +62,6 @@ class FileStorage:
         if obj == None:
             return
         else:
-            if obj in self.__objects:
-                del obj
+            obj_key = f"{obj.__class__.__name__}.{obj.id}"
+            if obj_key in self.__objects:
+                del self.__objects[obj_key]
